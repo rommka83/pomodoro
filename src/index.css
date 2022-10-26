@@ -1,6 +1,6 @@
 @font-face {
   font-family: SFUIDisplay;
-  src: url("../public/fonts/SFUIDisplay-Ultralight.woff2");
+  src: url('../public/fonts/SFUIDisplay-Ultralight.woff2');
   font-display: swap;
   font-weight: 200;
   font-style: normal;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: SFUIDisplay;
-  src: url("../public/fonts/SFUIDisplay-Light.woff2");
+  src: url('../public/fonts/SFUIDisplay-Light.woff2');
   font-display: swap;
   font-weight: 300;
   font-style: normal;
@@ -16,21 +16,21 @@
 
 @font-face {
   font-family: SFUIDisplay;
-  src: url("../public/fonts/SFUIDisplay-Regular.woff2");
+  src: url('../public/fonts/SFUIDisplay-Regular.woff2');
   font-display: swap;
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: SFUIDisplay;
-  src: url("../public/fonts/SFUIDisplay-Medium.woff2");
+  src: url('../public/fonts/SFUIDisplay-Medium.woff2');
   font-display: swap;
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: SFUIDisplay;
-  src: url("../public/fonts/SFUIDisplay-Bold.woff2");
+  src: url('../public/fonts/SFUIDisplay-Bold.woff2');
   font-display: swap;
   font-weight: 700;
   font-style: normal;
@@ -86,6 +86,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  background-color: transparent;
 }
 
 button::-moz-focus-inner {
@@ -98,25 +99,35 @@ a:visited {
   text-decoration: none;
 }
 
-ul li {
-  list-style: none;
-}
-
 img {
   vertical-align: top;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: 400;
+ul {
+  list-style: none;
 }
 
 body {
-  font-family: "SFUIDisplay", sans-serif;
+  font-family: 'SFUIDisplay', sans-serif;
   font-weight: 400;
 }
+
+:root {
+  --color-white: #fff;
+  --color-black: #333;
+  --color-grey-text: #999;
+  --color-grey-light: #f4f4f4;
+  --color-grey-border: #e4e4e4;
+  --color-pomodoro: #dc3e22;
+  --color-btn-green: #a8b64f;
+  --color-btn-hover: #899441;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* .main {
+} */

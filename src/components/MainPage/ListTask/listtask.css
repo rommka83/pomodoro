@@ -1,0 +1,38 @@
+.listtask {
+  grid-column: 1;
+  grid-row: 3;
+}
+.listtask__list {
+}
+.listtask__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 370px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--color-grey-border);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 17px;
+}
+.listtask__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--color-grey-border);
+}
+.listtask__value {
+  margin-right: 10px;
+}
+.listtask__dropdown {
+  margin-left: auto;
+}
+.line {
+  width: 370px;
+  height: 1px;
+  border-bottom: 1px solid var(--color-grey-border);
+}

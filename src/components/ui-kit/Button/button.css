@@ -1,0 +1,30 @@
+.btn {
+  width: fit-content;
+  padding: 15px 50px;
+  font-size: 16px;
+  line-height: 17px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-out,
+    box-shadow 0.1s ease-in-out;
+}
+.green {
+  color: var(--color-white);
+  background: var(--color-btn-green);
+  box-shadow: 10px 10px 5px rgb(147 202 76 / 40%);
+}
+.red {
+  color: var(--color-pomodoro);
+  border: 2px solid var(--color-pomodoro);
+  background-color: transparent;
+  box-shadow: 10px 10px 5px rgb(229 130 130 / 40%);
+}
+.green:hover {
+  background: var(--color-btn-hover);
+}
+.red:hover {
+  color: var(--color-white);
+  background-color: var(--color-pomodoro);
+}
+
+.btn:active {
+  box-shadow: none;
+}

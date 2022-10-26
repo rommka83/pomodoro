@@ -1,0 +1,7 @@
+.mainpage {
+  display: grid;
+  grid-template-columns: 500px minmax(300px, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 25px;
+  padding-bottom: 100px;
+}

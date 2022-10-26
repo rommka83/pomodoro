@@ -1,0 +1,7 @@
+.timer {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  width: 733px;
+  height: 507px;
+  background: #f4f4f4;
+}
