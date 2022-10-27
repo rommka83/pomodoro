@@ -2,8 +2,6 @@
   grid-column: 1;
   grid-row: 3;
 }
-.listtask__list {
-}
 .listtask__item {
   display: flex;
   justify-content: flex-start;

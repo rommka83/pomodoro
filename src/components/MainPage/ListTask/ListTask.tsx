@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dropdown } from './Dropdown';
 import './listtask.css';
 
 const taskArr = [
@@ -18,7 +19,7 @@ export function ListTask() {
             <li className='listtask__item' key={el.id}>
               <div className='listtask__number'>{el.id}</div>
               <span className='listtask__value'>{el.value}</span>
-              <button className='listtask__dropdown'>меню</button>
+              <Dropdown className='listtask__dropdown' />
             </li>
           );
         })}
