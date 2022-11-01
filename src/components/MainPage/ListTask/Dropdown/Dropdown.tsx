@@ -48,10 +48,24 @@ export function Dropdown({ className }: IDropdown) {
           <>
             <div className='dropdown__arrow'></div>
             <ul className='dropdown__list'>
-              <li className='dropdown__item'>{obj.increase}Увеличить</li>
-              <li className='dropdown__item'>{obj.decrease}Уменьшить</li>
-              <li className='dropdown__item'>{obj.edit}Редактировать</li>
-              <li className='dropdown__item'>{obj.delete}Удалить</li>
+              <li>
+                <button className='dropdown__item'>
+                  {obj.increase}Увеличить
+                </button>
+              </li>
+              <li>
+                <button className='dropdown__item'>
+                  {obj.decrease}Уменьшить
+                </button>
+              </li>
+              <li>
+                <button className='dropdown__item'>
+                  {obj.edit}Редактировать
+                </button>
+              </li>
+              <li>
+                <button className='dropdown__item'>{obj.delete}Удалить</button>
+              </li>
             </ul>
           </>
         )}

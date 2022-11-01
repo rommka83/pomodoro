@@ -1,0 +1,72 @@
+.timer__main {
+  display: grid;
+  grid-template-columns: 70px 170px 50px 170px 70px;
+  grid-template-rows: 130px 30px 60px;
+  row-gap: 10px;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+.timer__decr {
+  grid-column: 1;
+  grid-row: 1;
+}
+.timer__minute {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: end;
+}
+.timer__colon {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: center;
+}
+.timer__seconds {
+  grid-column: 4;
+  grid-row: 1;
+  text-align: start;
+}
+.timer__incr {
+  grid-column: 5;
+  grid-row: 1;
+}
+.timer__task {
+  grid-column: 1 / span 5;
+  grid-row: 2;
+  text-align: center;
+}
+.timer__start {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  margin-left: auto;
+}
+.timer__stop {
+  grid-column: 4 / span 2;
+  grid-row: 3;
+  margin-right: auto;
+}
+
+.ringBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+
+  border-radius: 50%;
+
+  background: var(--color-grey-head-timer);
+
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-white);
+}
+.tm {
+  font-weight: 200;
+  font-size: 150px;
+  line-height: 179px;
+}
+.textGrey {
+  color: var(--color-grey-text);
+}

@@ -1,0 +1,16 @@
+.timerHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  padding: 20px 40px;
+
+  background: var(--color-grey-head-timer);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 17px;
+  color: var(--color-white);
+}
+.timerHeader__list {
+  display: flex;
+}

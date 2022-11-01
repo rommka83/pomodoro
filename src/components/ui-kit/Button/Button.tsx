@@ -7,8 +7,24 @@ interface IBtn {
   styleBtn: Style;
   text: string;
   className?: string;
+  disabled?: boolean;
+  onClick?: () => void;
 }
 
-export function Button({ styleBtn, text, className }: IBtn) {
-  return <button className={`btn ${styleBtn}`}>{text}</button>;
+export function Button({
+  styleBtn,
+  text,
+  className,
+  onClick,
+  disabled = false,
+}: IBtn) {
+  return (
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={`btn ${styleBtn} ${className}`}
+    >
+      {text}
+    </button>
+  );
 }
