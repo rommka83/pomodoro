@@ -1,0 +1,46 @@
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalWindow {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: fit-content;
+  min-width: 350px;
+  padding: 25px;
+
+  background-color: #fff;
+}
+
+.modalTitle {
+  margin-bottom: 25px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 17px;
+}
+
+.modalDel {
+  margin-bottom: 20px;
+}
+
+.modalCancel {
+  text-decoration: underline;
+}
+
+.modalExit {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}

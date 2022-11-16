@@ -1,0 +1,26 @@
+.dayOfTheWeek {
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+
+  background-color: var(--color-grey-light);
+}
+
+.dayOfTheWeek__title {
+  margin-bottom: 15px;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.dayOfTheWeek__content {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.dayOfTheWeek__content_red {
+  color: var(--color-pomodoro);
+  font-weight: 700;
+}

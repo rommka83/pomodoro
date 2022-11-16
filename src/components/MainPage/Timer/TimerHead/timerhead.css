@@ -11,6 +11,22 @@
   line-height: 17px;
   color: var(--color-white);
 }
+.timerHeader_start {
+  background: var(--color-pomodoro);
+}
+.timerHeader_timeBreak {
+  background: var(--color-btn-green);
+}
+
 .timerHeader__list {
   display: flex;
+}
+.timerHeader__item {
+  padding: 1px;
+  background-color: var(--color-grey-head-timer);
+  border-radius: 50%;
+  line-height: 0;
+}
+.timerHeader__item:not(:last-child) {
+  margin-right: 5px;
 }

@@ -37,6 +37,7 @@
   font-size: 16px;
   line-height: 17px;
   color: var(--color-grey-text);
+  cursor: pointer;
 }
 .dropdown__item > svg {
   margin-right: 10px;

@@ -1,55 +1,74 @@
-import { ITask, ITasks } from '../state/atoms';
+/* eslint-disable react-hooks/rules-of-hooks */
+// import { useRecoilState } from 'recoil';
+// import {  ITasks, taskArr, timerState, timerValue } from '../state/atoms';
 
-function actionsOnAnArrayOfTasksAfterCompletionPomodoro(tasks: ITask[]) {
-  if (tasks.length > 0 && tasks[0].amountPomodoro > 0) {
-    tasks[0].amountPomodoro = tasks[0].amountPomodoro - 1;
-  } else if (tasks.length > 0 && tasks[0].amountPomodoro === 0) {
-    tasks = tasks.slice(1);
-  } else {
-    tasks = [];
-  }
-  return tasks;
+// const [data, setData] = useRecoilState(taskArr);
+// const [{ timer }, setTimer] = useRecoilState(timerValue);
+// const [{ start, timeBreak, pause }, setTimerState] = useRecoilState(timerState); // запущен ли таймер, идёт ли перерыв, стоит ли пауза
+// const [timer, setTimer] = useState(data.timer * 60); // время таймера при запуске приложения
+
+// удаление задачи из списка после её завершени
+// export function taskComplited() {
+//   const [data, setData] = useRecoilState(taskArr);
+//   useRecoilState(timerState); // запущен ли таймер, идёт ли перерыв, стоит ли пауза
+
+//   if (data.tasks[0].amountPomodoro > 1) {
+//     let newTask = {
+//       id: data.tasks[0].id,
+//       number: data.tasks[0].number,
+//       amountPomodoro: data.tasks[0].amountPomodoro - 1,
+//       value: data.tasks[0].value,
+//     };
+//     return [newTask, ...data.tasks.slice(1)];
+//   } else if (data.tasks[0].amountPomodoro === 1) {
+//     let newTask = data.tasks.slice(1);
+//     return newTask;
+//   } else {
+//     let newTask: ITask[] = [];
+//     return newTask;
+//   }
+// }
+
+export function time() {
+  //   const [data, setData] = useRecoilState(taskArr);
+  //   const [{ timer }, setTimer] = useRecoilState(timerValue);
+  //   const [{ start, timeBreak, pause }, setTimerState] =
+  //     useRecoilState(timerState); // запущен ли таймер, идёт ли перерыв, стоит ли пауза
+  //   // таймер больше 0
+  //   if (timer > 0) {
+  //     setTimer((oldTimer) => {
+  //       return { ...oldTimer, timer: timer - 1 };
+  //     });
+  //   } else {
+  //     // задачи в списке ещё есть и в очереди перерыв
+  //     if (data.tasks.length >= 1 && timeBreak === false) {
+  //       setData((oldData): ITasks => {
+  //         return {
+  //           ...oldData,
+  //           amountPomodoroComplited: oldData.amountPomodoroComplited + 1,
+  //           tasks: taskComplited(),
+  //         };
+  //       });
+  //       setTimerState(() => {
+  //         return { start: false, timeBreak: true, pause: false };
+  //       });
+  //       setTimer((oldTimer) => {
+  //         const myBreak =
+  //           data.amountPomodoroComplited !== 0 &&
+  //           data.amountPomodoroComplited % 3 === 0
+  //             ? data.bigBreak * 60
+  //             : data.littleBreak * 60;
+  //         return { ...oldTimer, timer: myBreak };
+  //       });
+  //     }
+  //     // окончание перерыва
+  //     if (timeBreak === true) {
+  //       setTimerState(() => {
+  //         return { start: false, timeBreak: false, pause: false };
+  //       });
+  //       setTimer((oldTimer) => {
+  //         return { ...oldTimer, timer: data.timer * 60 };
+  //       });
+  //     }
+  //   }
 }
-
-function myBreak(data: ITasks) {
-  data = {
-    amountPomodoroComplited: data.amountPomodoroComplited + 1,
-    timer: data.timer,
-    littleBreak: data.littleBreak,
-    bigBreak: data.bigBreak,
-    tasks: actionsOnAnArrayOfTasksAfterCompletionPomodoro(data.tasks),
-  };
-  return data;
-}
-
-export const timerLogic = (data: ITasks) => {
-  let timer = data.timer;
-  let timeBreak: true | false = false;
-
-  // таймер больше 0
-  if (timer > 0) {
-    timer = timer - 1;
-  } else {
-    // задачи в списке ещё есть и в очереди перерыв
-    if (data.tasks.length > 0 && timeBreak === false) {
-      data = myBreak(data);
-      timer =
-        data.amountPomodoroComplited !== 0 &&
-        data.amountPomodoroComplited % 3 === 0
-          ? data.bigBreak * 60
-          : data.littleBreak * 60;
-      timeBreak = true;
-    }
-    // задачи все выполнены
-    else if (data.tasks.length === 1 && timeBreak === false) {
-      data = myBreak(data);
-      timer = data.timer * 60;
-    }
-    // окончание перерыва
-    else if (data.tasks.length > 0 && timeBreak !== false) {
-      timer = data.timer * 60;
-      timeBreak = false;
-    }
-  }
-  return data;
-};

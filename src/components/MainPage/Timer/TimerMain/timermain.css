@@ -61,12 +61,37 @@
   font-weight: 700;
   font-size: 16px;
   color: var(--color-white);
+
+  box-shadow: 0px 0px 15px rgb(147 202 76);
+}
+.ringBtn:active {
+  box-shadow: none;
+}
+.ringBtn:disabled {
+  cursor: none;
+  background: var(--color-grey-head-timer-disabled);
+  box-shadow: none;
 }
 .tm {
   font-weight: 200;
   font-size: 150px;
   line-height: 179px;
 }
+
+.tm_start {
+  color: var(--color-pomodoro);
+}
+.tm_timeBreak {
+  color: var(--color-btn-green);
+}
+
+.timer__colon.tm_start > svg {
+  fill: var(--color-pomodoro);
+}
+.timer__colon.tm_timeBreak > svg {
+  fill: var(--color-btn-green);
+}
+
 .textGrey {
   color: var(--color-grey-text);
 }

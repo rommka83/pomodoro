@@ -1,0 +1,17 @@
+.fondation {
+  width: 100%;
+  height: 90%;
+}
+.fondation__item {
+  display: flex;
+  align-items: center;
+}
+.fondation__line {
+  margin-right: 30px;
+  width: 90%;
+  height: 1px;
+  background-color: var(--color-grey-head-timer);
+}
+.fondation__scale {
+  font-size: 12px;
+}

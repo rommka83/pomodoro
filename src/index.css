@@ -117,8 +117,11 @@ body {
   --color-black: #333;
   --color-grey-text: #999;
   --color-grey-light: #f4f4f4;
+  --color-grey-light2: #ececec;
   --color-grey-border: #e4e4e4;
   --color-grey-head-timer: #c4c4c4;
+  --color-grey-head-timer-disabled: rgba(196, 196, 196, 0.5);
+
   --color-pomodoro: #dc3e22;
   --color-btn-green: #a8b64f;
   --color-btn-hover: #899441;

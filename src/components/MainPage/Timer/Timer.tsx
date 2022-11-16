@@ -4,7 +4,7 @@ import { TimerHead } from './TimerHead';
 import { TimerMain } from './TimerMain/TimerMain';
 
 import { useRecoilValue } from 'recoil';
-import { taskArr } from '../../../state/atoms';
+import { taskArr } from '../../../state/taskArr';
 
 export function Timer() {
   const a = useRecoilValue(taskArr);

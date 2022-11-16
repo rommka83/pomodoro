@@ -1,0 +1,28 @@
+.stEl {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 180px;
+  padding: 25px;
+}
+
+.stEl__title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+}
+
+.stEl__content {
+  font-size: 64px;
+  line-height: 76px;
+}
+.stEl__img {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+}
