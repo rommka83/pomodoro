@@ -46,7 +46,12 @@ export function Chart({ className }: IChart) {
               <span>{el.dayText}</span>
             </li>
           ) : (
-            <li tabIndex={0} className='dayWeekChart__item' key={el.date}>
+            <li
+              tabIndex={0}
+              className='dayWeekChart__item'
+              key={el.date}
+              onClick={() => oneDaySet(el)}
+            >
               <div className='dayWeekChart__item_default'></div>
               <span>{el.dayText}</span>
             </li>

@@ -49,7 +49,7 @@
 .dayWeekChart__item_default {
   height: 2px;
   background-color: var(--color-grey-head-timer);
-  cursor: none;
+  /* cursor: none; */
 }
 .dayWeek {
   position: absolute;

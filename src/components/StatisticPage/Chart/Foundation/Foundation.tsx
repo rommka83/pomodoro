@@ -13,6 +13,7 @@ export function Foundation() {
           return el.totalWorkTime;
         })
       );
+      i = i + 1;
       return Math.floor(maxHight / i / 3600) !== 0
         ? `${Math.floor(maxHight / i / 3600)} час ${Math.floor(
             (maxHight / i - Math.floor(maxHight / i / 3600)) / 60
@@ -25,10 +26,10 @@ export function Foundation() {
   );
 
   // количество линий и диапазон можно менять, задав параметры функции
-  function lineRender(a: number, b: number) {
+  function lineRender(a: number) {
     let arr = [];
-    let hightLine = `${(1 / (b - a)) * 100}%`;
-    for (let i = a; i < b; i++) {
+    let hightLine = `${(1 / a) * 100}%`;
+    for (let i = 0; i !== a; i++) {
       arr.push(i);
     }
     return arr.map((el) => {
@@ -43,5 +44,5 @@ export function Foundation() {
     });
   }
 
-  return <ul className='fondation'>{lineRender(1, 5)}</ul>;
+  return <ul className='fondation'>{lineRender(4)}</ul>;
 }

@@ -85,11 +85,12 @@ export function Filter({ className }: IFilter) {
 
   // восстановление недель
   const weekRecovery = (arr: IDay[], j: number) => {
+    let newArr = arr.reverse();
     for (let i = 0; i !== 7; i++) {
-      if (!arr[i]) {
-        i === 0 ? arr.push(emptyDay(i, j)) : arr.splice(i, 0, emptyDay(i, j));
-      } else if (arr[i] && arr[i].day !== i) {
-        arr.splice(i, 0, emptyDay(i, j));
+      if (!newArr[i]) {
+        newArr.splice(i, 0, emptyDay(i, j));
+      } else {
+        newArr[i].day !== i && newArr.splice(i, 0, emptyDay(i, j));
       }
     }
   };
@@ -124,10 +125,10 @@ export function Filter({ className }: IFilter) {
       oneDaySet(twoWeeksAgo[0]);
     } else if (selectedOption.value === 'Прошедшая неделя') {
       setWeekStatistic(lastWeek);
-      oneDaySet(twoWeeksAgo[0]);
+      oneDaySet(lastWeek[0]);
     } else {
       setWeekStatistic(thisWeek);
-      oneDaySet(twoWeeksAgo[0]);
+      oneDaySet(thisWeek[0]);
     }
   }, [selectedOption.value]);
 

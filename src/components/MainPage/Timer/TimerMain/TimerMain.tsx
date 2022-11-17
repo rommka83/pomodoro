@@ -41,6 +41,7 @@ export function TimerMain() {
     breakTime: 0,
     stopping: 0,
   };
+
   function baseLeveling() {
     if (
       statisticData.length !== 0 &&
@@ -68,33 +69,44 @@ export function TimerMain() {
       setTimer(timer - 1);
       timeBreak
         ? setStatisticData((oldValue) => {
-            return [{ ...oldValue[0], breakTime: oldValue[0].breakTime + 1 }];
+            return oldValue.map((el) => {
+              if (el.date === newDayStatistic.date) {
+                return { ...el, breakTime: el.breakTime + 1 };
+              } else return el;
+            });
           })
         : setStatisticData((oldValue) => {
-            return [
-              { ...oldValue[0], totalWorkTime: oldValue[0].totalWorkTime + 1 },
-            ];
+            return oldValue.map((el) => {
+              if (el.date === newDayStatistic.date) {
+                return { ...el, totalWorkTime: el.totalWorkTime + 1 };
+              } else return el;
+            });
           });
     } else {
       play();
       setStatisticData((oldValue) => {
-        if (oldValue[0].totalWorkTime === 0) return oldValue;
-        return [
-          {
-            ...oldValue[0],
-            focusTime: Math.round(
-              (oldValue[0].totalWorkTime /
-                (oldValue[0].totalWorkTime +
-                  oldValue[0].pauseTime +
-                  oldValue[0].breakTime)) *
-                100
-            ),
-          },
-        ];
+        if (oldValue[0].totalWorkTime === 0) {
+          return oldValue;
+        } else {
+          return oldValue.map((el) => {
+            if (el.date === newDayStatistic.date) {
+              return {
+                ...el,
+                focusTime: Math.round(
+                  (oldValue[0].totalWorkTime /
+                    (oldValue[0].totalWorkTime +
+                      oldValue[0].pauseTime +
+                      oldValue[0].breakTime)) *
+                    100
+                ),
+              };
+            } else return el;
+          });
+        }
       });
 
       // задачи в списке ещё есть и в очереди перерыв
-      if (data.tasks.length >= 1 && timeBreak === false) {
+      if (data.tasks.length > 1 && timeBreak === false) {
         setData((oldData) => {
           return {
             ...oldData,
@@ -103,12 +115,14 @@ export function TimerMain() {
           };
         });
         setStatisticData((oldValue) => {
-          return [
-            {
-              ...oldValue[0],
-              totalNumberOFtomatoes: oldValue[0].totalNumberOFtomatoes + 1,
-            },
-          ];
+          return oldValue.map((el) => {
+            if (el.date === newDayStatistic.date) {
+              return {
+                ...el,
+                totalNumberOFtomatoes: el.totalNumberOFtomatoes + 1,
+              };
+            } else return el;
+          });
         });
         setTimerState(() => {
           return { start: false, timeBreak: true, pause: false };
@@ -122,14 +136,23 @@ export function TimerMain() {
       }
 
       // выполнение крайней задачи
-      if (data.tasks.length === 0 && timeBreak === false) {
+      if (data.tasks.length === 1 && timeBreak === false) {
+        setData((oldData) => {
+          return {
+            ...oldData,
+            amountPomodoroComplited: 0,
+            tasks: taskComplited(data.tasks),
+          };
+        });
         setStatisticData((oldValue) => {
-          return [
-            {
-              ...oldValue[0],
-              totalNumberOFtomatoes: oldValue[0].totalNumberOFtomatoes + 1,
-            },
-          ];
+          return oldValue.map((el) => {
+            if (el.date === newDayStatistic.date) {
+              return {
+                ...el,
+                totalNumberOFtomatoes: el.totalNumberOFtomatoes + 1,
+              };
+            } else return el;
+          });
         });
       }
 
@@ -156,7 +179,7 @@ export function TimerMain() {
         setStatisticData((oldValue) => {
           return [{ ...oldValue[0], pauseTime: oldValue[0].pauseTime + 1 }];
         });
-    }, 1000);
+    }, 10);
 
     // отсутствуют невыполненые задачи
     if (data.tasks.length === 0) {
