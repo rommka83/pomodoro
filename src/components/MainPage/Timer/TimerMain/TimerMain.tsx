@@ -179,7 +179,7 @@ export function TimerMain() {
         setStatisticData((oldValue) => {
           return [{ ...oldValue[0], pauseTime: oldValue[0].pauseTime + 1 }];
         });
-    }, 10);
+    }, 1000);
 
     // отсутствуют невыполненые задачи
     if (data.tasks.length === 0) {
